@@ -3,10 +3,8 @@ package com.hernan.test;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import static org.junit.Assert.*;
-//import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
-//import org.openqa.selenium.support.ui.Select;
 
 public class TestPSL {
   private WebDriver driver;
@@ -18,8 +16,8 @@ public class TestPSL {
 
   @Before
   public void setUp() throws Exception {
-   // System.setProperty("webdriver.gecko.driver","D:\\Downloads\\Selenium\\geckodriver-v0.10.0-win64\\geckodriver.exe");
-    System.setProperty("webdriver.gecko.driver","..\\resources\\geckodriver.exe");
+    System.setProperty("webdriver.gecko.driver","D:\\Downloads\\Selenium\\geckodriver-v0.10.0-win64\\geckodriver.exe");
+   // System.setProperty("webdriver.gecko.driver","..\\resources\\geckodriver.exe");
     driver = new FirefoxDriver();
     baseUrl = "http://automatizacion.herokuapp.com/hnieto/addDoctor";
     baseUrl2 = "http://automatizacion.herokuapp.com/hnieto/addPatient";
