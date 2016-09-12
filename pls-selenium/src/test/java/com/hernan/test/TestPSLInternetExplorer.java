@@ -18,7 +18,7 @@ public class TestPSLInternetExplorer {
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
 
-  @Before
+  //@Before
   public void setUp() throws Exception {
     System.setProperty("webdriver.ie.driver","src/test/resources/IEDriverServer.exe");
     driver = new InternetExplorerDriver();
@@ -28,8 +28,8 @@ public class TestPSLInternetExplorer {
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
-  @Test
-  public void testPSL() throws Exception {
+ // @Test
+  public void testPSLInternetExplorer() throws Exception {
     driver.get(baseUrl + "");
     //driver.findElement(By.linkText("Agregar Doctor")).click();
     driver.findElement(By.id("name")).clear();
@@ -76,7 +76,7 @@ public class TestPSLInternetExplorer {
     driver.findElement(By.linkText("Inicio")).click();
   }
 
-  @After
+  //@After
   public void tearDown() throws Exception {
   //  driver.quit();
 	  driver.close();
