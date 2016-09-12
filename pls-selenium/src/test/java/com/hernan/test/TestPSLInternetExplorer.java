@@ -1,12 +1,16 @@
 package com.hernan.test;
 
 import java.util.concurrent.TimeUnit;
+
 import org.junit.*;
+
 import static org.junit.Assert.*;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
-public class TestPSL {
+public class TestPSLInternetExplorer {
   private WebDriver driver;
   private String baseUrl;
   private String baseUrl2;
@@ -16,8 +20,8 @@ public class TestPSL {
 
   @Before
   public void setUp() throws Exception {
-    System.setProperty("webdriver.gecko.driver","src/test/resources/geckodriver.exe");
-    driver = new FirefoxDriver();
+    System.setProperty("webdriver.ie.driver","src/test/resources/IEDriverServer.exe");
+    driver = new InternetExplorerDriver();
     baseUrl = "http://automatizacion.herokuapp.com/hnieto/addDoctor";
     baseUrl2 = "http://automatizacion.herokuapp.com/hnieto/addPatient";
     baseUrl3 = "http://automatizacion.herokuapp.com/hnieto/appointmentScheduling";
@@ -25,7 +29,7 @@ public class TestPSL {
   }
 
   @Test
-  public void testFirefoxPSL() throws Exception {
+  public void testPSL() throws Exception {
     driver.get(baseUrl + "");
     //driver.findElement(By.linkText("Agregar Doctor")).click();
     driver.findElement(By.id("name")).clear();
